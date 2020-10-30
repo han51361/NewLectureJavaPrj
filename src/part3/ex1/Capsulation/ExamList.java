@@ -5,6 +5,23 @@ import java.util.Scanner;
 public class ExamList {
 
     //외부변수의 변경으로 인해 파일이 에러가 나는것을 방지 => capsulation
+    //파라미터 전달이 아닌, 인스턴스를 통해 호춣을해야 편하다
+    //인스턴스를 사용해야 속성,값 등을 이용하여 행동 지시
+    // ex . list.inputList() (o) ExamList.inputLisy(list) (x)
+    // list 야 list input 해
+    // static method vs instance method
+    /*
+    public static void inputList(ExamList list){
+    list.exams[list.current] = new Exam();
+    }
+    vs
+    public void inputList(){
+    //여기선 받을 parameter 가 없기에 묵시적으로 this 로 받는다.
+    this.exams[this.current] = new Exam();
+    }
+
+
+     */
     public Exam[] exams;
     int curret;
 
