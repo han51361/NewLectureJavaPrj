@@ -25,11 +25,11 @@ public class ExamList {
 
      */
     Exam[] exams;
-    int curret;
+    private int current;
 
 
     void printList() {
-        this.printList(this.curret);
+        this.printList(this.current);
     }
 
     void printList(int size) {
@@ -91,7 +91,7 @@ public class ExamList {
             exam.math = math;
 
             Exam[] exams = this.exams;
-            int size = this.curret;
+            int size = this.current;
 
             if (exams.length == size) {
                 //  1.크기가 5개 정도 더 큰 새로운
@@ -103,10 +103,14 @@ public class ExamList {
                 this.exams = temp;
             }
 
-            this.exams[this.curret] = exam;
-            this.curret++;
+            this.exams[this.current] = exam;
+            this.current++;
         }
 
+        static int inputMenu(){
+         int k =0;
+         return k;
+        }
 
 
 
@@ -114,7 +118,7 @@ public class ExamList {
         public void init () {
 
             this.exams = new Exam[3];
-            this.curret = 0;
+            this.current = 0;
         }
     }
 

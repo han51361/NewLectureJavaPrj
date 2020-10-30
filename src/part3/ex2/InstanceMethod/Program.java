@@ -4,7 +4,8 @@ package part3.ex2.InstanceMethod;
 import static part3.ex2.InstanceMethod.ExamList.*;
 
 public class Program {
-
+    // 데이터 구조에 대해서는 습관적으로 private
+    // 서비스 해야할 것들에 대해서는 public
     public static void main(String[] args) {
 
         ExamList list = new ExamList();
