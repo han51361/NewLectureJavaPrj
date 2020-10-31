@@ -1,7 +1,9 @@
-package part3.ex2.InstanceMethod;
+package part3.ex3.GettersSetters;
 
 
-import static part3.ex2.InstanceMethod.ExamList.*;
+import java.util.Scanner;
+
+import static part3.ex3.GettersSetters.ExamList.inputMenu;
 
 public class Program {
      // 데이터 구조에 대해서는 습관적으로 private
@@ -11,13 +13,14 @@ public class Program {
         ExamList list = new ExamList();
         // 생성자는 다시 생성하지 않는다.
 
+        Scanner sc = new Scanner(System.in);
 
         int menu;
         boolean keepLoop = true;
 
         while(keepLoop){
-
-            menu= inputMenu();
+            System.out.println("수를 입력해주세요");
+            menu = sc.nextInt();
             switch (menu){
 
                 case 1 :
@@ -34,6 +37,7 @@ public class Program {
                     break;
                 default:
                     System.out.println("Wrong Input");
+                    break;
             }
 
         }

@@ -6,7 +6,7 @@ public class Program {
 
     public static void main(String[] args) {
 
-        ExamList list = new ExamList();
+        ExamList list = new ExamList(); // new ExamList + (): 뒤에 ()가 생성자 앞엔 객체
         ExamList.init(list);
 
 

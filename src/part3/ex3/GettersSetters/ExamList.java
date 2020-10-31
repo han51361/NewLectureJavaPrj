@@ -1,4 +1,4 @@
-package part3.ex2.InstanceMethod;
+package part3.ex3.GettersSetters;
 
 
 
@@ -29,7 +29,7 @@ public class ExamList {
 
 
     void printList() {
-        this.printList(this.current);
+        this.printList(current);
     }
 
     void printList(int size) {
@@ -40,12 +40,13 @@ public class ExamList {
 
         for (int i = 0; i < size; i++) {
             Exam exam = exams[i];
-            int kor = exam.kor;
-            int eng = exam.eng;
-            int math = exam.math;
-
-            int total = kor + eng + math;
-            float avg = total / 3.0f;
+            int kor = exam.getKor();//exam.kor;
+            int eng = exam.getEng();
+            int math = exam.getMath();
+            int total = exam.total();
+            float avg = exam.avg();
+           // int total = kor + eng + math 이뚀한 캡슐화에맞지 않다 다른 클래스의 속성을 사용하니
+            //float avg = total / 3.0f;
 
 
             System.out.printf("kor : %d | eng : %d | math : %d \n", kor, eng, math);
@@ -72,7 +73,7 @@ public class ExamList {
             do {
                 System.out.printf("eng : ");
                 eng = scan.nextInt();
-                if (eng < 0 || eng < 100)
+                if (eng < 0 || 100 < eng)
                     System.out.printf("eng : wrong");
             } while (eng < 0 || 100 < eng);
 
@@ -80,15 +81,17 @@ public class ExamList {
             do {
                 System.out.printf("math : ");
                 math = scan.nextInt();
-                if (math < 0 || math < 100)
+                if (math < 0 || 100 <math)
                     System.out.printf("math : wrong");
             } while (math < 0 || 100 < math);
 
 
-            Exam exam = new Exam();
-            exam.kor = kor;
-            exam.eng = eng;
-            exam.math = math;
+            Exam exam = new Exam(kor,eng,math);
+
+//            Exam exam = new Exam();
+//            exam.setKor(kor);
+//            exam.setEng(eng);
+//            exam.setMath(math);
 
             Exam[] exams = this.exams;
             int size = this.current;
@@ -105,6 +108,8 @@ public class ExamList {
 
             this.exams[this.current] = exam;
             this.current++;
+
+            System.out.printf("성적 기입 완료 \n");
         }
 
         static int inputMenu(){
