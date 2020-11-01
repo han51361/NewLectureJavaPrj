@@ -73,7 +73,8 @@ public class ExamList {
            this(3); //code 중복을 막음
         }
 
-        public ExamList(int size){
+        public ExamList(int size){ // aggregation has A 관계
+        // 전체와 부분이 부분의 연관관계를 맺으며 동일한 생명주기를 갖지 않는다.
         // 생성자 오버로드
         exams = new Exam[size];
         current = 0;

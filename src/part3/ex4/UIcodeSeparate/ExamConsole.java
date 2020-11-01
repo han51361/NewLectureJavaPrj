@@ -3,8 +3,19 @@ package part3.ex4.UIcodeSeparate;
 import java.util.Scanner;
 
 public class ExamConsole {
+    // ExamConosle 과 ExamList
+    // composition Has A 일체형 관계
+    // 전체와 부분이 강력한 연관 관계를 맺으면 같은 생명주기를 갖는다.
+    // 연산자 기술은 원래 메소드 내에서만 만들게 해야한다.
 
-    private  ExamList list = new ExamList();
+    //private  ExamList list = new ExamList();
+
+    private  ExamList list;
+
+    public  ExamConsole(){
+        list = new ExamList();
+    }
+
     void inputList () {
         //instance method 방법 with this
         Scanner scan = new Scanner(System.in);
