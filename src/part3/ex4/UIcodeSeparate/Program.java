@@ -1,8 +1,5 @@
 package part3.ex4.UIcodeSeparate;
 
-
-
-
 import java.util.Scanner;
 
 public class Program {
@@ -10,7 +7,7 @@ public class Program {
     // 서비스 해야할 것들에 대해서는 public
     public static void main(String[] args) {
 
-        ExamList list = new ExamList();
+        ExamConsole list = new ExamConsole();
         // 생성자는 다시 생성하지 않는다.
 
         Scanner sc = new Scanner(System.in);
