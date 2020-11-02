@@ -17,7 +17,7 @@ public class Exam {
 
     public int getKor(){
         //캡슐을 깨지 않기 위해 get 함를 만든다.
-        //데이터 구조가 변경되지 않기 위해getter&setter 사용
+        //데이터 구조가 변경되지 않기 위해 getter&setter 사용
         return kor;
     }
 
