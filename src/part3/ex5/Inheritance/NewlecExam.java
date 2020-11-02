@@ -26,4 +26,13 @@ public class NewlecExam extends Exam { //is A상속
         return total()/4.0f;
   }
 
+  public NewlecExam(){
+    this(0,0,0,0);
+  }
+
+    public NewlecExam(int kor,int eng,int math,int com){
+
+        super(kor,eng,math); // 부모 class 에게 전달해서 직접대입하라고 지정
+        this.com = com;
+    }
 }
