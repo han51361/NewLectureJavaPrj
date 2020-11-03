@@ -4,6 +4,13 @@ import part3.ex4.UIcodeSeparate.Exam;
 
 public class NewlecExam extends Exam { //is A상속
     //Exam = 부모 class , NewlecExam = 자식 class
+
+
+    // 부모와 자식 간에는 참조가 가능하기에
+    // Exam exam = new NewlecExam() 이 가능하다. (반대는 불가능)
+    // 참조형식 = 객체 형식 가능
+    //자바는 참조형식의 함수보다 객체 형식의 함수 호출을 우선으로 한다.
+    //.
     private Exam exam;
     private int com;
 
