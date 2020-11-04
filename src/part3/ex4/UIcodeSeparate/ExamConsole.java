@@ -2,7 +2,7 @@ package part3.ex4.UIcodeSeparate;
 
 import java.util.Scanner;
 
-public class ExamConsole {
+public abstract class ExamConsole {
     // ExamConosle 과 ExamList
     // composition Has A 일체형 관계
     // 전체와 부분이 강력한 연관 관계를 맺으면 같은 생명주기를 갖는다.
@@ -16,7 +16,7 @@ public class ExamConsole {
         list = new ExamList();
     }
 
-    void inputList () {
+    public void input() {
         //instance method 방법 with this
         Scanner scan = new Scanner(System.in);
         System.out.println("성적을 입력해주시기 바랍니다.");
@@ -47,8 +47,11 @@ public class ExamConsole {
         } while (math < 0 || 100 < math);
 
 
-        Exam exam = new Exam(kor,eng,math);
-
+      //  Exam exam = new Exam(kor,eng,math);
+        Exam exam = makeExam();
+        exam.setKor(kor);
+        exam.setEng(eng);
+        exam.setMath(math);
 //            Exam exam = new Exam();
 //            exam.setKor(kor);
 //            exam.setEng(eng);
@@ -57,11 +60,13 @@ public class ExamConsole {
         list.add(exam);
     }
 
-    void printList() {
-        this.printList(list.size()); //current 의 getter 가 필요하다.
+   protected abstract  Exam makeExam();
+
+    public void print() {
+        this.print(list.size()); //current 의 getter 가 필요하다.
     }
 
-    void printList(int size) {
+    void print(int size) {
         //static method
         System.out.println("성적출력이");
 
