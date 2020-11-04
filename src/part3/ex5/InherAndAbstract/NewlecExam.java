@@ -1,4 +1,4 @@
-package part3.ex5.Inheritance;
+package part3.ex5.InherAndAbstract;
 
 import part3.ex4.UIcodeSeparate.Exam;
 
@@ -25,7 +25,9 @@ public class NewlecExam extends Exam { //is A상속
 
     @Override
     public int total(){
-                return super.total()+com;
+
+       int total = onTotal()+com;
+       return total;
     }
 
   @Override

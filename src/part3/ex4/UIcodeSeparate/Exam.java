@@ -1,6 +1,6 @@
 package part3.ex4.UIcodeSeparate;
 
-public class Exam {
+public abstract class Exam {
     int kor;
     int eng;
     int math;
@@ -51,11 +51,13 @@ public class Exam {
         this.math = math;
     }
 
-    public int total() {
-        return kor+eng+math;
-    }
+    public abstract int total(); // 여기에서 abstract 를 안쓰면서 total을 구현해버리면
+    //자식들이 별도로 넣어줘야하는 것들을 할 수 없다.
 
-    public float avg() {
-        return total()/3.0f;
-    }
+    protected  int onTotal(){
+    //자식들에게만 공개하는 범위 protected 설정
+            return kor+eng+math;
+        }
+
+    public abstract float avg();
 }

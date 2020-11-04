@@ -1,4 +1,4 @@
-package part3.ex5.Inheritance;
+package part3.ex5.InherAndAbstract;
 
 public class Program {
 
