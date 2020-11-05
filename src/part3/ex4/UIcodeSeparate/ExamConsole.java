@@ -58,9 +58,12 @@ public abstract class ExamConsole {
 //            exam.setMath(math);
 // -----------------add------------------------------
         list.add(exam);
+        onInput(exam); // 이벤트 메소드
     }
 
-   protected abstract  Exam makeExam();
+    protected abstract void onInput(Exam exam);
+    protected abstract void onPrint(Exam exam);
+    protected abstract  Exam makeExam();
 
     public void print() {
         this.print(list.size()); //current 의 getter 가 필요하다.
@@ -82,7 +85,7 @@ public abstract class ExamConsole {
             // int total = kor + eng + math 이뚀한 캡슐화에맞지 않다 다른 클래스의 속성을 사용하니
             //float avg = total / 3.0f;
 
-
+            onPrint(exam);
             System.out.printf("kor : %d | eng : %d | math : %d \n", kor, eng, math);
             System.out.printf("total : %d | avg : %6.2f\n", total, avg);
         }
