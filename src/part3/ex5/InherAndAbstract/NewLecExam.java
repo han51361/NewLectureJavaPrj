@@ -2,7 +2,7 @@ package part3.ex5.InherAndAbstract;
 
 import part3.ex4.UIcodeSeparate.Exam;
 
-public class NewlecExam extends Exam { //is A상속
+public class NewLecExam extends Exam { //is A상속
     //Exam = 부모 class , NewlecExam = 자식 class
 
 
@@ -35,11 +35,11 @@ public class NewlecExam extends Exam { //is A상속
         return total()/4.0f;
   }
 
-  public NewlecExam(){
+  public NewLecExam(){
     this(0,0,0,0);
   }
 
-    public NewlecExam(int kor,int eng,int math,int com){
+    public NewLecExam(int kor, int eng, int math, int com){
 
         super(kor,eng,math); // 부모 class 에게 전달해서 직접대입하라고 지정
         this.com = com;

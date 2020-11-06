@@ -9,7 +9,7 @@ public class NewLecExamConsole extends ExamConsole {
 
     @Override
     protected void onInput(Exam exam) {
-        NewlecExam newlecExam = (NewlecExam) exam;
+        NewLecExam newlecExam = (NewLecExam) exam;
         Scanner sc = new Scanner(System.in);
         int com;
         do {
@@ -24,7 +24,7 @@ public class NewLecExamConsole extends ExamConsole {
 
     @Override
     protected void onPrint(Exam exam) {
-        NewlecExam newlecExam = (NewlecExam)exam; //형식변환을 해줘야한다.
+        NewLecExam newlecExam = (NewLecExam)exam; //형식변환을 해줘야한다.
         int com = newlecExam.getCom();
         System.out.printf("com : %d \n",com);
     }
@@ -32,7 +32,7 @@ public class NewLecExamConsole extends ExamConsole {
     @Override
     protected Exam makeExam() {
 
-        return new NewlecExam();
+        return new NewLecExam();
 
 
     }

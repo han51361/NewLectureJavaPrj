@@ -9,6 +9,16 @@ public class Program {
         // 메인 함수는 ExamConsole 을 dependency(의존 객체 but 부속품 X) 로 가지고 있다.
         ExamConsole list = new ExamConsole() {
             @Override
+            protected void onInput(Exam exam) {
+
+            }
+
+            @Override
+            protected void onPrint(Exam exam) {
+
+            }
+
+            @Override
             protected Exam makeExam() {
                 return null;
             }
